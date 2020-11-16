@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import Games from './views/Games';
+import Characters from './views/Characters';
 
 function App() {
   return (
@@ -8,6 +9,18 @@ function App() {
       <label>
         <input type="text" ></input>
       </label>
+
+      <BrowserRouter>
+      <ul>
+        <li><Link to="/" >Hjem</Link></li>
+        <li><Link to="/games" >Spill</Link></li>
+        <li><Link to="/characters" >Karakterer</Link></li>
+      </ul>
+        <Switch>
+          <Route exact path ="/" component={ Games } ></Route>
+          <Route path="/characters" component={ Characters } ></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
