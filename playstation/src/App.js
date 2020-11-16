@@ -8,11 +8,8 @@ import Characters from './views/Characters';
 
 function App() {
   return (
-    
-
-      
-
-      <Router>
+    <div className="appMain">
+    <Router>
 
         <Navbar bg="dark" variant="dark" className="mb-5">
           <Navbar.Brand>Playstation</Navbar.Brand>
@@ -34,7 +31,7 @@ function App() {
           </main>
         </Container>
       </Router>
-    
+      </div>
   );
 }
 
