@@ -5,15 +5,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Games from './views/Games';
 import Characters from './views/Characters';
+import Home from './views/Home';
 
 function App() {
   return (
     <div className="appMain">
-    <Router>
+    <Router >
 
-        <Navbar bg="dark" variant="dark" className="mb-5">
-          <Navbar.Brand>Playstation</Navbar.Brand>
-          <Nav>
+        <Navbar>
+          <Nav style={{margin: 'auto', color: 'red', fontSize: '35px'}} >
             <Nav.Link as={Link} to="/">Hjem</Nav.Link>
             <Nav.Link as={Link} to="/games">Spill</Nav.Link>
             <Nav.Link as={Link} to="/characters">Karakterer</Nav.Link>
@@ -24,7 +24,7 @@ function App() {
         <Container>
           <main>
             <Switch>
-              <Route exact path="/" component={Games}></Route>  
+              <Route exact path="/" component={Home}></Route>  
               <Route path="/games" component={Games}></Route>
               <Route path="/characters" component={Characters}></Route>
             </Switch>
