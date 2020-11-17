@@ -5,11 +5,7 @@ import React from 'react';
 //TODO: Fikse bilde i card
 
 const Games = () => {
-
-   
-
-
-    return (
+ return (
         <section>
             <h3
             style={{
@@ -20,7 +16,6 @@ const Games = () => {
 
         <Row>
             <Card>
-            
                 <Card.Img src={require("../assets/images/katt.jpg")}></Card.Img>
                 <Card.Title>Oppdag nye spill</Card.Title>
                 <Card.Body>

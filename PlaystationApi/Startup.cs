@@ -11,6 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
+using PlaystationApi.Models;
+using PlaystationApi.Services;
+using Microsoft.Extensions.Options;
+
 namespace PlaystationApi
 {
     public class Startup
@@ -26,6 +30,28 @@ namespace PlaystationApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+
+            services.AddCors(
+                options => { 
+                    options.AddPolicy("AllowAll",
+                        builder => builder
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowAnyOrigin()
+                    );
+
+                    services.Configure<IPlaystationDatabaseSettings>(
+                Configuration.GetSection( nameof(PlaystationDatabaseSettings) )
+            );
+
+            services.AddSingleton<IPlaystationDatabaseSettings>(
+                sp => sp.GetRequiredService<IOptions<PlaystationDatabaseSettings>>().Value
+            );
+
+            services.AddSingleton<GamesService>();
+                }
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +62,8 @@ namespace PlaystationApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("AllowAll");
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
