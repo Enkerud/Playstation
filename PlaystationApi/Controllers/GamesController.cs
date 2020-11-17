@@ -8,7 +8,6 @@ namespace PlaystationApi.Controllers{
     [ApiController]
     [Route("[controller]")]
     public class GamesController : ControllerBase {
-
         private readonly GamesService _gamesService;
 
         public GamesController(GamesService gamesService){
@@ -20,33 +19,16 @@ namespace PlaystationApi.Controllers{
             return _gamesService.Get();
         }
 
-        [HttpPost]
-        public ActionResult<Game> Post(Game game){
-            _gamesService.Create( game );
-            return game;
-        }
+        [HttpPut("{id:length(24)}")]
+        public IActionResult Put(string id, Game gameIn){
+            var selectedGame = _gamesService.Get(id);
 
-        [HttpDelete("{id:length(24)}")]
-        public IActionResult Delete(string id){
-            var game = _gamesService.Get( id );
-
-            if( game == null){
+            if( selectedGame == null){
                 return NotFound();
             }
 
-            _gamesService.Remove( game.Id );
-            return NoContent();
-        }
+            _gamesService.Update(id, gameIn );
 
-        [HttpPut]
-        public IActionResult Put(Game gameIn){
-            var game = _gamesService.Get( gameIn.Id );
-
-            if( game == null){
-                return NotFound();
-            }
-
-            _gamesService.Update( game );
             return NoContent();
         }
 

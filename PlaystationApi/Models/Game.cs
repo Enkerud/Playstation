@@ -11,6 +11,7 @@ namespace PlaystationApi.Models{
         public string Name { get; set; }
         public int Price { get; set; }
         public string Image { get; set; }
+        public string Desc { get; set; }
         public string Developer { get; set; }
         public string Characters { get; set; }
         public string Release { get; set; }

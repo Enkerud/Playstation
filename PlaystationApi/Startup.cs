@@ -29,29 +29,26 @@ namespace PlaystationApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            
-
-            services.AddCors(
-                options => { 
-                    options.AddPolicy("AllowAll",
-                        builder => builder
-                            .AllowAnyHeader()
-                            .AllowAnyMethod()
-                            .AllowAnyOrigin()
-                    );
-
-                    services.Configure<IPlaystationDatabaseSettings>(
-                Configuration.GetSection( nameof(PlaystationDatabaseSettings) )
+            services.Configure<PlaystationDatabaseSettings>(
+                Configuration.GetSection(nameof(PlaystationDatabaseSettings))
             );
 
-            services.AddSingleton<IPlaystationDatabaseSettings>(
-                sp => sp.GetRequiredService<IOptions<PlaystationDatabaseSettings>>().Value
+            services.AddSingleton<IPlaystationDatabaseSettings>( sp => 
+                sp.GetRequiredService<IOptions<PlaystationDatabaseSettings>>().Value
             );
 
             services.AddSingleton<GamesService>();
-                }
-            );
+
+            services.AddCors( options => {
+                options.AddPolicy("AllowAll", builder => 
+                    builder
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowAnyOrigin()
+                );
+            });
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,7 +60,7 @@ namespace PlaystationApi
             }
 
             app.UseCors("AllowAll");
-            
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
