@@ -1,13 +1,14 @@
 import { Col, Card, Button } from 'react-bootstrap';
+import {GameContext } from '../../contexts/GameContext';
 import { useContext } from 'react';
 
-const GameItem = ( {id, name, type} ) => {
+const GameItem = ( {id, name, genre} ) => {
 
     const { game } = useContext( GameContext );
     const [ gameState, setGame ] = game;
 
     const setSelectedGame = () => {
-        setGame({id: id, name: name, type: type});
+        setGame({id: id, name: name, genre: genre});
     }
 
 
@@ -16,12 +17,11 @@ const GameItem = ( {id, name, type} ) => {
             <Card>
                 <Card.Title>{ name }</Card.Title>
                 <Card.Body>
-                    <Card.Text>Type: { type } </Card.Text>
+                    <Card.Text>{ genre } </Card.Text>
                 </Card.Body>
-                <Button onClick={ setSelectedGame } >Oppdater Game</Button>
             </Card>
         </Col>
     )
 }
 
-export default GameItem
+export default GameItem;
