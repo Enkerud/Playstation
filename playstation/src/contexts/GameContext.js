@@ -30,4 +30,6 @@ export const GameProvider = ( props ) => {
 
 }
 
+export default GameProvider;
+
 

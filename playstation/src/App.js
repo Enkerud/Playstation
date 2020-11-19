@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Games from './views/Games';
 import Characters from './views/Characters';
 import Home from './views/Home';
+import Admin from './views/Admin';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Nav.Link as={Link} to="/">Hjem</Nav.Link>
             <Nav.Link as={Link} to="/games">Spill</Nav.Link>
             <Nav.Link as={Link} to="/characters">Karakterer</Nav.Link>
+            <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
 
           </Nav>  
         </Navbar>
@@ -27,6 +29,7 @@ function App() {
               <Route exact path="/" component={Home}></Route>  
               <Route path="/games" component={Games}></Route>
               <Route path="/characters" component={Characters}></Route>
+              <Route path="/admin" component={Admin}></Route>
             </Switch>
           </main>
         </Container>
