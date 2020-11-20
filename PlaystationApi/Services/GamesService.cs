@@ -24,6 +24,15 @@ namespace PlaystationApi.Services {
             return _games.Find( game => game.Id == id).SingleOrDefault();
         }
 
+        public Game Create(Game game){
+            _games.InsertOne(game);
+            return game;
+        }
+
+        public void Remove(string id){
+            _games.DeleteOne( game => game.Id == id );
+        }
+
         public void Update(string id, Game gameIn){
             _games.ReplaceOne( game => game.Id == id, gameIn );
         }

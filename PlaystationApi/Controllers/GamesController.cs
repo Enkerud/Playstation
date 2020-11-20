@@ -19,6 +19,24 @@ namespace PlaystationApi.Controllers{
             return _gamesService.Get();
         }
 
+        [HttpPost]
+        public ActionResult<Game> Post(Game game){
+            _gamesService.Create( game );
+            return game;
+        }
+
+        [HttpDelete("{id:length(24)}")]
+        public IActionResult Delete(string id){
+            var game = _gamesService.Get( id );
+
+            if( game == null){
+                return NotFound();
+            }
+
+            _gamesService.Remove( game.Id );
+            return NoContent();
+        }
+
         [HttpPut("{id:length(24)}")]
         public IActionResult Put(string id, Game gameIn){
             var selectedGame = _gamesService.Get(id);
