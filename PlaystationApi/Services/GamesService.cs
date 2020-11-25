@@ -4,11 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace PlaystationApi.Services {
-
     public class GamesService {
-
         private readonly IMongoCollection<Game> _games;
-
         public GamesService(IPlaystationDatabaseSettings settings){
             var client = new MongoClient( settings.ConnectionString );
             var database = client.GetDatabase( settings.DatabaseName );
@@ -36,7 +33,5 @@ namespace PlaystationApi.Services {
         public void Update(string id, Game gameIn){
             _games.ReplaceOne( game => game.Id == id, gameIn );
         }
-
     }
-
 }

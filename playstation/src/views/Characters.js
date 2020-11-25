@@ -2,9 +2,16 @@ import { useState, useEffect } from 'react';
 
 
 
+const styles = {
+    sectionStyle: {
+        body: "100%",
+        height: "1000px"
+    }
+}
+
 const Characters = () => {
     return (
-        <section>
+        <section style={styles.sectionStyle} >
             <h3
             style={{
                 textAlign: 'center',

@@ -35,7 +35,7 @@ const AdminGameItem = ( {id, name, genre, desc, price, developer, characters, re
                     <Card.Text>{ release } </Card.Text>
                     <Card.Text>{ locations } </Card.Text>
                 </Card.Body>
-                <Button onClick={ setSelectedGame } >Oppdater Game</Button>
+                <Button onClick={ setSelectedGame } >Oppdater spill</Button>
             </Card>
         </Col>
     )

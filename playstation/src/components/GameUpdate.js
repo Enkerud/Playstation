@@ -51,7 +51,7 @@ const GameUpdate = () => {
 
             <label style={styles.labelStyle}>Pris</label>
             <input 
-            onChange={ (e) => setGame({...gameState, price: e.target.value}) } 
+            onChange={ (e) => setGame({...gameState, price: parseInt(e.target.value)}) } 
             type="number" value={ gameState.price } ></input>
             
 

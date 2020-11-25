@@ -26,7 +26,7 @@ const CreateGame = () => {
                 setDesc( e.target.value );
                 break;
             case "price":
-                setPrice( e.target.value );
+                setPrice( parseInt(e.target.value ));
                 break;
             case "image":
                 setImage( e.target.value );
@@ -73,7 +73,7 @@ const CreateGame = () => {
 
     return (
         <section>
-            <h3>Skap nytt Game</h3>
+            <h3 style={styles.labelStyle}>Legg inn nytt spill</h3>
             <label style={styles.labelStyle}>Navn</label>
             <input id="name" onChange={ handleChange } type="text" value={ name } />
             <label style={styles.labelStyle}>Sjanger</label>
@@ -93,7 +93,7 @@ const CreateGame = () => {
             <label style={styles.labelStyle}>Verdener</label>
             <input id="locations" onChange={ handleChange } type="text" value={ locations } />
 
-            <input onClick={ createGame }  type="button" value="Lagre nytt Game"></input>
+            <input onClick={ createGame }  type="button" value="Legg til nytt spill"></input>
         </section>
     )
 }
