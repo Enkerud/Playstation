@@ -1,8 +1,9 @@
-import { Col, Card, Button } from 'react-bootstrap';
+import { Col, Card, Button, Jumbotron } from 'react-bootstrap';
 import {GameContext } from '../../contexts/GameContext';
 import { useContext } from 'react';
+import GameDelete from './GameDelete';
 
-const AdminGameItem = ( {id, name, genre, desc, price, developer, characters, release, locations} ) => {
+const AdminGameItem = ( {id, name, image, genre, desc, price, developer, characters, release, locations} ) => {
 
     const { game } = useContext( GameContext );
     const [ gameState, setGame ] = game;
@@ -11,6 +12,7 @@ const AdminGameItem = ( {id, name, genre, desc, price, developer, characters, re
         setGame({
             id: id, 
             name: name, 
+            image: image,
             genre: genre, 
             desc: desc, 
             price: price, 
@@ -20,6 +22,7 @@ const AdminGameItem = ( {id, name, genre, desc, price, developer, characters, re
             locations: locations
         });
     }
+    
 
 
     return (
@@ -27,6 +30,7 @@ const AdminGameItem = ( {id, name, genre, desc, price, developer, characters, re
             <Card>
                 <Card.Title>{ name }</Card.Title>
                 <Card.Body>
+                    <Jumbotron><Card.Title>{ name }</Card.Title></Jumbotron>
                     <Card.Text>{ genre } </Card.Text>
                     <Card.Text>{ desc } </Card.Text>
                     <Card.Text>{ price } </Card.Text>
@@ -36,6 +40,7 @@ const AdminGameItem = ( {id, name, genre, desc, price, developer, characters, re
                     <Card.Text>{ locations } </Card.Text>
                 </Card.Body>
                 <Button onClick={ setSelectedGame } >Oppdater spill</Button>
+                <Button variant="danger" >{GameDelete()}Slett</Button>
             </Card>
         </Col>
     )

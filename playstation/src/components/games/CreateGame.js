@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
+import AdminUploadImage from './AdminUploadImage';
 
 const CreateGame = () => {
 
     const [name, setName ] = useState("s");
     const [genre, setGenre ] = useState("t");
     const [ desc, setDesc ] = useState("u");
-    const [ price, setPrice ] = useState("v");
+    const [ price, setPrice ] = useState("0");
     const [ image, setImage ] = useState("r");
     const [ developer, setDeveloper ] = useState("w");
     const [ characters, setCharacters ] = useState("x");
@@ -92,6 +93,8 @@ const CreateGame = () => {
             <input id="release" onChange={ handleChange } type="text" value={ release } />
             <label style={styles.labelStyle}>Verdener</label>
             <input id="locations" onChange={ handleChange } type="text" value={ locations } />
+
+            <AdminUploadImage></AdminUploadImage>
 
             <input onClick={ createGame }  type="button" value="Legg til nytt spill"></input>
         </section>

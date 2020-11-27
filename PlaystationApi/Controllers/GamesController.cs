@@ -2,6 +2,8 @@ using PlaystationApi.Models;
 using PlaystationApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace PlaystationApi.Controllers{
 
@@ -20,6 +22,7 @@ namespace PlaystationApi.Controllers{
         }
 
         [HttpPost]
+       
         public ActionResult<Game> Post(Game game){
             _gamesService.Create( game );
             return game;

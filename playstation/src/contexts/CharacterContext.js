@@ -12,7 +12,7 @@ export const CharacterProvider = ( props ) => {
     const [ characters, setCharacters ] = useState([
         { id: "1616", name: "Astros Playroom", price: 0, image: "astro.jpg", 
         desc: "Prøv Playstation sine nye features med dette gratisspillet!", developer: "Sony Entertainment", 
-        characters: "Astro", release: "19.11.2020", genre: "Family", location: "The Playroom" }
+        characters: "Astro", release: "19.11.2020", genre: "Family", location: "The Playroom", image: "katt.jpg" }
     ]); 
 
     useEffect( () => {

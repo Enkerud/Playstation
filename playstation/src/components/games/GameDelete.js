@@ -1,18 +1,23 @@
 import axios from 'axios';
+import { useContext } from 'react';
+import {Button} from 'react-bootstrap';
+import {GameContext } from '../../contexts/GameContext';
 
-const GameDelete = ( props ) => {
+
+const GameDelete = (  ) => {
+
+    const { game } = useContext( GameContext );
+    const [ gameState ] = game;
 
     const deleteGame = () => {
-        const url = "https://127.0.0.1:5001/games";
-
-        axios.delete(`${url}/${props.id}`)
+        const url ="https://localhost:5001/games";
+        axios.delete(`${url}/${gameState.id}`, gameState, {data: game});
     }
 
     return (
-        <article>
-            <h3> {props.name} </h3>
-            <input onClick={ deleteGame } type="button" value="Slett Game" />
-        </article>
+        <Button
+            onClick={ deleteGame }>Slett
+        </Button>
     )
 }
 

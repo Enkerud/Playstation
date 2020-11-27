@@ -7,6 +7,7 @@ import Games from './views/Games';
 import Characters from './views/Characters';
 import Home from './views/Home';
 import Admin from './views/Admin';
+import FullGame from './views/FullGame';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/games" component={Games}></Route>
               <Route path="/characters" component={Characters}></Route>
               <Route path="/admin" component={Admin}></Route>
+              <Route path="/full-game" component={FullGame}></Route>
             </Switch>
           </main>
         </Container>
