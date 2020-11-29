@@ -94,7 +94,7 @@ const CreateGame = () => {
             <label style={styles.labelStyle}>Verdener</label>
             <input id="locations" onChange={ handleChange } type="text" value={ locations } />
 
-            <AdminUploadImage></AdminUploadImage>
+            {/* <AdminUploadImage></AdminUploadImage> */}
 
             <input onClick={ createGame }  type="button" value="Legg til nytt spill"></input>
         </section>

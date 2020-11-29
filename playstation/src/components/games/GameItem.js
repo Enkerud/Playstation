@@ -1,22 +1,23 @@
-import { Col, Card, Button } from 'react-bootstrap';
+import { Col, Card } from 'react-bootstrap';
 import {GameContext } from '../../contexts/GameContext';
 import { useContext } from 'react';
-import cardImage from '../../assets/images/katt.jpg';
+import cardImage from '../../assets/images/pup4.png';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import GamePage from './GamePage';
+
 
 const GameItem = ( {id, name, genre, developer, image} ) => {
 
     const { game } = useContext( GameContext );
-    const [ gameState, setGame ] = game;
-
-    const setSelectedGame = () => {
-        setGame({id: id, name: name, genre: genre, developer: developer, image: image});
-    }
-
+    
+<Route path={`/game/${id}`} component={GamePage} />
 
     return (
         <Col>
             <Card>
+            <Link to={`/game/${id}`}>{name}'s Page</Link>
                 <Card.Title>{ name }</Card.Title>
+                {/* Skjønner ikke hvorfor ikke det under ikke funker? */}
                 <Card.Img src={require('../../assets/images/katt.jpg')}></Card.Img>
                 <Card.Img src={cardImage}></Card.Img>
                 <Card.Body>

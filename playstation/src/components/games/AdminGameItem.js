@@ -40,7 +40,7 @@ const AdminGameItem = ( {id, name, image, genre, desc, price, developer, charact
                     <Card.Text>{ locations } </Card.Text>
                 </Card.Body>
                 <Button onClick={ setSelectedGame } >Oppdater spill</Button>
-                <Button variant="danger" >{GameDelete()}Slett</Button>
+                <Button variant="danger" >{GameDelete}Slett</Button>
             </Card>
         </Col>
     )
