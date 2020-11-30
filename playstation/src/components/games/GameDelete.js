@@ -4,19 +4,22 @@ import {Button} from 'react-bootstrap';
 import {GameContext } from '../../contexts/GameContext';
 
 
-const GameDelete = ( props ) => {
+const GameDelete = ( id ) => {
 
     const { game } = useContext( GameContext );
-    const [ gameState ] = game;
 
     const deleteGame = () => {
         const url ="https://localhost:5001/games";
-        axios.delete(`${url}/${game.id}`, game, {data: game});
+        axios.delete(`${url}/${id}`)
+            .then(response => {
+                console.log(response);
+            });   
     }
 
+
     return (
-        <Button
-            onClick={ deleteGame }>Slett
+        <Button variant="danger"
+            onClick={ deleteGame}>Slett
         </Button>
     )
 }

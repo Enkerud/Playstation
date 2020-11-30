@@ -6,11 +6,8 @@ import cardImage from '../assets/images/katt.jpg';
 const FullGame = ( {id, name, genre, developer, image} ) => {
 
     const { game } = useContext( GameContext );
-    const [ gameState, setGame ] = game;
 
-    const setSelectedGame = () => {
-        setGame({id: id, name: name, genre: genre, developer: developer, image: image});
-    }
+ 
 
 
     return (

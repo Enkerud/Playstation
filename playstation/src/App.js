@@ -32,6 +32,7 @@ function App() {
               <Route path="/characters" component={Characters}></Route>
               <Route path="/admin" component={Admin}></Route>
               <Route path="/full-game" component={FullGame}></Route>
+              
             </Switch>
           </main>
         </Container>

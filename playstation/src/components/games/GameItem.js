@@ -1,16 +1,15 @@
 import { Col, Card } from 'react-bootstrap';
-import {GameContext } from '../../contexts/GameContext';
-import { useContext } from 'react';
 import cardImage from '../../assets/images/pup4.png';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 import GamePage from './GamePage';
 
 
 const GameItem = ( {id, name, genre, developer, image} ) => {
 
-    const { game } = useContext( GameContext );
     
-<Route path={`/game/${id}`} component={GamePage} />
+<Route  path={`/game/${id}`} render={props => <GamePage {...props} /> } />
+
+
 
     return (
         <Col>
