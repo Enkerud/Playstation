@@ -21,6 +21,11 @@ namespace PlaystationApi.Controllers{
             return _gamesService.Get();
         }
 
+        [HttpGet("{id:length(24)}")]
+        public ActionResult<Game> Get([FromRoute] string id) {
+        return _gamesService.Get(id);
+}
+
         [HttpPost]
        
         public ActionResult<Game> Post(Game game){
