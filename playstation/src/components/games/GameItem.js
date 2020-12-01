@@ -7,9 +7,6 @@ import GamePage from './GamePage';
 const GameItem = ( {id, name, genre, developer, image} ) => {
 
     
-<Route  path={`/game/${id}`} render={props => <GamePage {...props} /> } />
-
-
 
     return (
         <Col>

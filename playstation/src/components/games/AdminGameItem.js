@@ -2,7 +2,6 @@ import { Col, Card, Button, Jumbotron } from 'react-bootstrap';
 import {GameContext } from '../../contexts/GameContext';
 import { useContext } from 'react';
 import GameDelete from './GameDelete';
-import axios from 'axios';
 
 
 
@@ -29,6 +28,7 @@ const AdminGameItem = ( {id, name, image, genre, desc, price, developer, charact
         
     }
 
+ 
     
 
 
@@ -51,8 +51,7 @@ const AdminGameItem = ( {id, name, image, genre, desc, price, developer, charact
                 <Button onClick={ setSelectedGame } >Oppdater spill</Button>
                 <GameDelete 
                 key={ i }
-            id={ game.id }
-            name={ game.name }></GameDelete>
+                id={ id }></GameDelete>
             </Card>
         </Col>
     )

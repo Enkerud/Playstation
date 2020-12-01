@@ -1,16 +1,17 @@
 import React from 'react'
+import GameItem from './GameItem';
 import {GameContext } from '../../contexts/GameContext';
 import { useContext } from 'react';
-import GameItem from './GameItem';
-import axios from 'axios';
 
-const GamePage = ( {match: { params: {id } } } ) => {
+
+const GamePage = ({ match, location }) => {
+  const { params: { id } } = match;
 
 
 
   return (
     <div>
-        <h3>SPILLET</h3>
+        <h3>Spillet</h3>
         <h1>{id}</h1>
         <GameItem></GameItem>
 
