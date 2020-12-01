@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Col, Row, Card, Button } from 'react-bootstrap';
 import React from 'react';
+import Banner from 'react-js-banner';
 
 //TODO: Fikse bilde i card
 
@@ -45,6 +47,20 @@ const Games = () => {
                 </Card.Body>
             </Card>
         </Row>    
+
+            <a href="https://store.playstation.com/en-no/latest" target="_blank">
+        <Banner 
+            title="Kjøp spill hos Playstation Store" 
+        />
+        </a>
+        <a href="https://blog.playstation.com/" target="_blank">
+
+            <Banner
+            title="Les nyheter på Playstations offisielle blogg" 
+        />
+        </a>
+        
+
         </section>
         
     )

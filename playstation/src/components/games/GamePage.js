@@ -22,10 +22,13 @@ const GamePage = ({ match, location }) => {
     }
   }, [game, isFetched]);
 
+ 
+
 
   return (
     <div>
       <h1>{game.name}</h1>
+      <p>{game.genre}</p>
       <p>{game.desc}</p>
       <p>{game.price}</p>
       <p>{game.developer}</p>
