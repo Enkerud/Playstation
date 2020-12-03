@@ -22,6 +22,9 @@ const AdminUploadImage = () => {
   });
 
   return (
+    // Her har jeg ikke fått opplasting av bilder til å fungere på grunn av de nylige endringene i webpack-config filene. 
+    // Har dette likevel med for å vise ca. hvordan jeg ville gått frem.
+    
     // <div >
     //   <h3>Last opp bilde</h3>
     //   <label>Bilde</label>

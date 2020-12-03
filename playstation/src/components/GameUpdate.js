@@ -36,51 +36,51 @@ const GameUpdate = () => {
             onChange={ (e) => setGame({...gameState, name: e.target.value}) } 
             type="text" value={ gameState.name } ></input>
 
-           
-            <label style={styles.labelStyle}>Sjanger</label>
+            <br />
+            <label style={styles.labelStyle}>Sjanger: </label>
             <input 
             onChange={ (e) => setGame({...gameState, genre: e.target.value}) } 
             type="text" value={ gameState.genre } ></input>
             
-            
-            <label style={styles.labelStyle}>Desc</label>
+            <br />
+            <label style={styles.labelStyle}>Beskrivelse: </label>
             <input 
             onChange={ (e) => setGame({...gameState, desc: e.target.value}) } 
             type="text" value={ gameState.desc } ></input>
             
-
-            <label style={styles.labelStyle}>Pris</label>
+            <br />
+            <label style={styles.labelStyle}>Pris:</label>
             <input 
             onChange={ (e) => setGame({...gameState, price: parseInt(e.target.value)}) } 
             type="number" value={ gameState.price } ></input>
 
             {/* Må her bruke bildeadresse/url pga endringer i webpack-config vi ikke har gått gjennom */}
-
-            <label style={styles.labelStyle}>Bilde(url)</label>
+            <br />
+            <label style={styles.labelStyle}>Bilde(url):</label>
             <input 
             onChange={ (e) => setGame({...gameState, image: e.target.value}) } 
             type="text" value={ gameState.image } ></input>
             
-
-            <label style={styles.labelStyle}>Utvikler</label>
+            <br />
+            <label style={styles.labelStyle}>Utvikler:</label>
             <input 
             onChange={ (e) => setGame({...gameState, developer: e.target.value}) } 
             type="text" value={ gameState.developer } ></input>
             
-
-            <label style={styles.labelStyle}>Karakterer</label>
+            <br />
+            <label style={styles.labelStyle}>Karakterer:</label>
             <input 
             onChange={ (e) => setGame({...gameState, characters: e.target.value}) } 
             type="text" value={ gameState.characters } ></input>
             
-
-            <label style={styles.labelStyle}>Utgivelsesdato</label>
+            <br />
+            <label style={styles.labelStyle}>Utgivelsesdato:</label>
             <input 
             onChange={ (e) => setGame({...gameState, release: e.target.value}) } 
             type="text" value={ gameState.release } ></input>
             
-
-            <label style={styles.labelStyle}>Verdener</label>
+            <br />
+            <label style={styles.labelStyle}>Verdener:</label>
             <input 
             onChange={ (e) => setGame({...gameState, locations: e.target.value}) } 
             type="text" value={ gameState.locations } ></input>

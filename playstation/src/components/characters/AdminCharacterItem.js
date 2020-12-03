@@ -6,7 +6,7 @@ import CharacterDelete from './CharacterDelete';
 
 
 
-const AdminCharacterItem = ( {id, name, image, alias, desc, age} ) => {
+const AdminCharacterItem = ( {id, name, image, alias, desc, age, game, weapon, enemy} ) => {
 
     const { character, characters, i } = useContext( CharacterContext );
     const [ characterState, setCharacter ] = character;
@@ -19,6 +19,9 @@ const AdminCharacterItem = ( {id, name, image, alias, desc, age} ) => {
             alias: alias, 
             desc: desc, 
             age: age, 
+            game: game,
+            weapon: weapon,
+            enemy: enemy
 
         });
 
@@ -31,10 +34,13 @@ const AdminCharacterItem = ( {id, name, image, alias, desc, age} ) => {
             <Card>
                 <Card.Title>{ name }</Card.Title>
                 <Card.Body>
-                    <Jumbotron><Card.Title>{ name }</Card.Title></Jumbotron>
+                    <Card.Img src={image} style={{height: 120}}></Card.Img>
                     <Card.Text>{ alias } </Card.Text>
                     <Card.Text>{ desc } </Card.Text>
                     <Card.Text>{ age } </Card.Text>
+                    <Card.Text>{ game } </Card.Text>
+                    <Card.Text>{ weapon } </Card.Text>
+                    <Card.Text>{ enemy } </Card.Text>
 
                 </Card.Body>
                 <Button onClick={ setSelectedCharacter } >Oppdater spill</Button>

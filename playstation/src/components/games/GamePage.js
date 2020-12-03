@@ -51,7 +51,7 @@ const GamePage = ({ match, location }) => {
       <img src={game.image} style={styles.imgStyle}></img>
       <p>{game.genre}</p>
       <p>{game.desc}</p>
-      <p>{game.price}</p>
+      <p>{game.price},-</p>
       <p>{game.developer}</p>
       <p>{game.release}</p>
       <h3>Karakterer</h3>

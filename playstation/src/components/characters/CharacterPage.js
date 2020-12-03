@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 const CharacterPage = ({ match, location }) => {
   const { params: { id } } = match;
 
-  const [character, setCharacter] = useState({ name: "lol" });
+  const [character, setCharacter] = useState({ name: "Karakter" });
   const [isFetched, setIsFetched] = useState(false);
   useEffect(() => {
     if (! isFetched) {
@@ -41,7 +41,6 @@ const CharacterPage = ({ match, location }) => {
 
   return (
     <div style={styles.textStyle}>
-        <h1>Karakteren</h1>
       <h1>{character.name}</h1>
       <img src={character.image} style={styles.imgStyle}></img>
       <p> "{character.alias}"</p>

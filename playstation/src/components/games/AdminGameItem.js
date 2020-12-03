@@ -30,16 +30,18 @@ const AdminGameItem = ( {id, name, image, genre, desc, price, developer, charact
 
  
     
-
-
-
+    const styles = {
+        imgStyle: {
+            height: '120px'
+        }
+    }
 
     return (
         <Col>
             <Card>
                 <Card.Title>{ name }</Card.Title>
                 <Card.Body>
-                    <Jumbotron><Card.Title>{ name }</Card.Title></Jumbotron>
+                    <Card.Img src={image} style={styles.imgStyle}></Card.Img>
                     <Card.Text>{ genre } </Card.Text>
                     <Card.Text>{ desc } </Card.Text>
                     <Card.Text>{ price } </Card.Text>

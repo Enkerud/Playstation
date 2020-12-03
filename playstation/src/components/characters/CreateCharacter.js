@@ -3,11 +3,14 @@ import axios from 'axios';
 
 const CreateCharacter = () => {
 
-    const [name, setName ] = useState("s");
-    const [alias, setAlias ] = useState("t");
-    const [ desc, setDesc ] = useState("u");
+    const [name, setName ] = useState("");
+    const [alias, setAlias ] = useState("");
+    const [ desc, setDesc ] = useState("");
     const [ age, setAge ] = useState("0");
-    const [ image, setImage ] = useState("r");
+    const [ image, setImage ] = useState("");
+    const [ game, setGame ] = useState("");
+    const [ weapon, setWeapon ] = useState("");
+    const [ enemy, setEnemy ] = useState("");
 
 
 
@@ -28,6 +31,15 @@ const CreateCharacter = () => {
             case "image":
                 setImage( e.target.value );
                 break; 
+                case "game":
+                setGame( e.target.value );
+                break; 
+            case "weapon":
+                setWeapon( e.target.value );
+                break; 
+            case "enemy":
+                setEnemy( e.target.value );
+                break; 
                 default: 
         }
     }
@@ -40,6 +52,9 @@ const CreateCharacter = () => {
             desc: desc, 
             age: age, 
             image: image,
+            game: game,
+            weapon: weapon,
+            enemy: enemy
         };
 
         axios.post(url, newCharacter)
@@ -57,14 +72,34 @@ const CreateCharacter = () => {
             <h3 style={styles.labelStyle}>Legg inn ny karakter</h3>
             <label style={styles.labelStyle}>Navn</label>
             <input id="name" onChange={ handleChange } type="text" value={ name } />
+
+            <br />
             <label style={styles.labelStyle}>Sjanger</label>
             <input id="alias" onChange={ handleChange } type="text" value={ alias } />
+
+            <br />
             <label style={styles.labelStyle}>Beskrivelse</label>
             <input id="desc" onChange={ handleChange } type="text" value={ desc } />
+
+            <br />
             <label style={styles.labelStyle}>Alder</label>
             <input id="age" onChange={ handleChange } type="text" value={ age } />
-            <label style={styles.labelStyle}>Bilde</label>
+
+            <br />
+            <label style={styles.labelStyle}>Bilde(url)</label>
             <input id="image" onChange={ handleChange } type="text" value={ image } />
+
+            <br />
+            <label style={styles.labelStyle}>Spill</label>
+            <input id="game" onChange={ handleChange } type="text" value={ game } />
+
+            <br />
+            <label style={styles.labelStyle}>Våpen</label>
+            <input id="weapon" onChange={ handleChange } type="text" value={ weapon } />
+
+            <br />
+            <label style={styles.labelStyle}>Fiende</label>
+            <input id="enemy" onChange={ handleChange } type="text" value={ enemy } />
 
 
             <input onClick={ createCharacter }  type="button" value="Legg til ny karakter"></input>

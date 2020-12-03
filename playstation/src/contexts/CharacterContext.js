@@ -1,7 +1,6 @@
 import { useEffect, useState, createContext } from 'react';
 import axios from 'axios';
 
-//TODO: MASSE HER; IKKE SIKKERT DET FUNKER RIKTIG MED OPPLASTNING OSV.  
 
 export const CharacterContext = createContext();
 

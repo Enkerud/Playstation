@@ -48,6 +48,7 @@ const Admin = () => {
 
             <CharacterProvider>
                 <AdminCharacterList></AdminCharacterList>
+                <Button variant="success">+ Legg til karakter</Button>
                 <CharacterUpdate></CharacterUpdate>
                 <CreateCharacter style={styles.labelStyle}></CreateCharacter>
             </CharacterProvider>

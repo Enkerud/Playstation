@@ -11,13 +11,16 @@ const Games = () => {
 
     const styles = {
         cardStyle: {
+            textAlign: 'center',
             fontSize: '60px',
-            width: '15em',
-            height: '',
-            margin: '15px',
+            width: '900px',
+            margin: 'auto',
+            marginBottom: '15px',
             color: 'black',
-            bot: '0%',
             backgroundColor: 'azure'
+        },
+        bannerStyle: {
+            margin: '40px'
         }
     };
  return (
@@ -30,14 +33,11 @@ const Games = () => {
                 margin: '40px'
             }} >Playstation</h3>
 
-        <Row style={{
-                margin: 'auto',
-            }}>
+        <Row >
             <Card style={styles.cardStyle}>
-            <Card.Img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20200704183430/horizon-zero-dawn-impact-poster-ps4-us-07feb17.jpg" alt="Card image" variant="bottom"/>
+            <Card.Img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20200704183430/horizon-zero-dawn-impact-poster-ps4-us-07feb17.jpg" alt="Card image" />
                         <Card.Text>Oppdag nye spill</Card.Text>
             </Card>
-
 
             <Card style={styles.cardStyle}>
                 <Card.Img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20201015170515/jKyZh7AmtzFheyg3GWUn3k.jpg"></Card.Img>
@@ -47,18 +47,17 @@ const Games = () => {
             </Card>
 
             <Card style={styles.cardStyle}>
-                
                 <Card.Img src="https://images6.alphacoders.com/983/983639.png"></Card.Img>
                     <Card.Body>
                     <Card.Text>Drøm deg bort i utrolige spillverdener!</Card.Text>
                 </Card.Body>
             </Card>
+        </Row>  
 
-
-        </Row>    
+          {/* Bannere som skal lede til Playstation sine offisielle sider */}
 
             <a href="https://store.playstation.com/en-no/latest" target="_blank">
-        <Banner 
+        <Banner style={styles.bannerStyle}
             title="Kjøp spill hos Playstation Store" 
         />
         </a>

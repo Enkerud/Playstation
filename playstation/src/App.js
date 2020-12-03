@@ -10,6 +10,9 @@ import Admin from './views/Admin';
 import GamePage from './components/games/GamePage';
 import Routes from './components/routes/Routes';
 
+// I denne oppgaven fant jeg ut at det har blitt gjort endringer i webpack-config slik at bilder ikke fungerte som i vår opplæring.
+// Har da brukt bildeadresser/url istedenfor å hente inn og laste opp bilder til wwwroot-mappen.
+
 function App() {
   return (
     <div className="appMain">

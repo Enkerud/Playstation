@@ -6,13 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-const CharacterItem = ( {id, name, genre, developer, image, morale} ) => {
+const CharacterItem = ( {id, name, alias, game, image, morale} ) => {
 
     const styles = {
         cardStyle: {
             textAlign: 'center',
             margin: '1em',
             width: 'auto'
+        },
+        imgStyle: {
+            height: "200px",
         },
         goodStyle: {
             border: '5px',
@@ -45,13 +48,13 @@ const CharacterItem = ( {id, name, genre, developer, image, morale} ) => {
         <Col>
         
             <Card class="card bg-dark text-white" style={styles.goodStyle}>
-            <Card.Img src={image}></Card.Img>
+            <Card.Img src={image} style={styles.imgStyle}></Card.Img>
                 <Card.Title>{ name }</Card.Title>
                 {/* Skjønner ikke hvorfor ikke det under ikke funker? */}
                 
                 <Card.Body style={styles.goodStyle}>
-                    <Card.Text>{ genre } </Card.Text>
-                    <Card.Text>{ developer } </Card.Text>
+                    <Card.Text>{ alias } </Card.Text>
+                    <Card.Text>{ game } </Card.Text>
                     <Link to={`/character/${id}`}>
                         <Button>{name}'s side</Button>
                     </Link>

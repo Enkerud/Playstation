@@ -4,15 +4,15 @@ import AdminUploadImage from './AdminUploadImage';
 
 const CreateGame = () => {
 
-    const [name, setName ] = useState("s");
-    const [genre, setGenre ] = useState("t");
-    const [ desc, setDesc ] = useState("u");
+    const [name, setName ] = useState("");
+    const [genre, setGenre ] = useState("");
+    const [ desc, setDesc ] = useState("");
     const [ price, setPrice ] = useState("0");
-    const [ image, setImage ] = useState("r");
-    const [ developer, setDeveloper ] = useState("w");
-    const [ characters, setCharacters ] = useState("x");
-    const [ release, setRelease ] = useState("y");
-    const [ locations, setLocations ] = useState("z");
+    const [ image, setImage ] = useState("");
+    const [ developer, setDeveloper ] = useState("");
+    const [ characters, setCharacters ] = useState("");
+    const [ release, setRelease ] = useState("");
+    const [ locations, setLocations ] = useState("");
 
 
     const handleChange = ( e ) => {
@@ -77,20 +77,36 @@ const CreateGame = () => {
             <h3 style={styles.labelStyle}>Legg inn nytt spill</h3>
             <label style={styles.labelStyle}>Navn</label>
             <input id="name" onChange={ handleChange } type="text" value={ name } />
+
+            <br />
             <label style={styles.labelStyle}>Sjanger</label>
             <input id="genre" onChange={ handleChange } type="text" value={ genre } />
+
+            <br />
             <label style={styles.labelStyle}>Beskrivelse</label>
             <input id="desc" onChange={ handleChange } type="text" value={ desc } />
+
+            <br />
             <label style={styles.labelStyle}>Pris</label>
             <input id="price" onChange={ handleChange } type="text" value={ price } />
+
+            <br />
             <label style={styles.labelStyle}>Bilde</label>
             <input id="image" onChange={ handleChange } type="text" value={ image } />
+
+            <br />
             <label style={styles.labelStyle}>Utvikler</label>
             <input id="developer" onChange={ handleChange } type="text" value={ developer } />
+
+            <br />
             <label style={styles.labelStyle}>Karakterer</label>
             <input id="characters" onChange={ handleChange } type="text" value={ characters } />
+
+            <br />
             <label style={styles.labelStyle}>Release</label>
             <input id="release" onChange={ handleChange } type="text" value={ release } />
+
+            <br />
             <label style={styles.labelStyle}>Verdener</label>
             <input id="locations" onChange={ handleChange } type="text" value={ locations } />
 
