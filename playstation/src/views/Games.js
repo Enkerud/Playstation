@@ -16,7 +16,6 @@ const Games = () => {
 
             <GameProvider>
                 <GameList></GameList>
- 
             </GameProvider>
             
         </section>

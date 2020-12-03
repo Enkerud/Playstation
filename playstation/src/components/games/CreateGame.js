@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AdminUploadImage from './AdminUploadImage';
 
 const CreateGame = () => {
@@ -78,7 +80,7 @@ const CreateGame = () => {
             <label style={styles.labelStyle}>Navn</label>
             <input id="name" onChange={ handleChange } type="text" value={ name } />
 
-            <br />
+            
             <label style={styles.labelStyle}>Sjanger</label>
             <input id="genre" onChange={ handleChange } type="text" value={ genre } />
 
@@ -86,7 +88,7 @@ const CreateGame = () => {
             <label style={styles.labelStyle}>Beskrivelse</label>
             <input id="desc" onChange={ handleChange } type="text" value={ desc } />
 
-            <br />
+            
             <label style={styles.labelStyle}>Pris</label>
             <input id="price" onChange={ handleChange } type="text" value={ price } />
 
@@ -94,7 +96,7 @@ const CreateGame = () => {
             <label style={styles.labelStyle}>Bilde</label>
             <input id="image" onChange={ handleChange } type="text" value={ image } />
 
-            <br />
+            
             <label style={styles.labelStyle}>Utvikler</label>
             <input id="developer" onChange={ handleChange } type="text" value={ developer } />
 
@@ -102,7 +104,7 @@ const CreateGame = () => {
             <label style={styles.labelStyle}>Karakterer</label>
             <input id="characters" onChange={ handleChange } type="text" value={ characters } />
 
-            <br />
+            
             <label style={styles.labelStyle}>Release</label>
             <input id="release" onChange={ handleChange } type="text" value={ release } />
 
@@ -111,8 +113,8 @@ const CreateGame = () => {
             <input id="locations" onChange={ handleChange } type="text" value={ locations } />
 
             <AdminUploadImage></AdminUploadImage> 
-
-            <input onClick={ createGame }  type="button" value="Legg til nytt spill"></input>
+            <br />
+            <Button variant="success" onClick={ createGame } >Legg til nytt spill</Button>
         </section>
     )
 }

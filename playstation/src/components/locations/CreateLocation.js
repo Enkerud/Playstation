@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CreateLocation = () => {
 
@@ -54,12 +56,12 @@ const CreateLocation = () => {
 
     return (
         <section>
-            <h3 style={styles.labelStyle}>Legg inn ny karakter</h3>
+            <h3 style={styles.labelStyle}>Legg til ny verden</h3>
             <label style={styles.labelStyle}>Navn</label>
             <input id="name" onChange={ handleChange } type="text" value={ name } />
 
 
-            <br />
+            
             <label style={styles.labelStyle}>Beskrivelse</label>
             <input id="desc" onChange={ handleChange } type="text" value={ desc } />
 
@@ -69,17 +71,17 @@ const CreateLocation = () => {
             <label style={styles.labelStyle}>Bilde(url)</label>
             <input id="image" onChange={ handleChange } type="text" value={ image } />
 
-            <br />
+            
             <label style={styles.labelStyle}>Spill</label>
             <input id="game" onChange={ handleChange } type="text" value={ game } />
 
 
-            <br />
+            
             <label style={styles.labelStyle}>Fiende</label>
             <input id="enemies" onChange={ handleChange } type="text" value={ enemies } />
 
-
-            <input onClick={ createLocation }  type="button" value="Legg til ny karakter"></input>
+            <br />
+            <Button variant="success" onClick={ createLocation } >Legg til ny verden</Button>
 
         </section>
     )

@@ -36,7 +36,7 @@ const GameUpdate = () => {
             onChange={ (e) => setGame({...gameState, name: e.target.value}) } 
             type="text" value={ gameState.name } ></input>
 
-            <br />
+            
             <label style={styles.labelStyle}>Sjanger: </label>
             <input 
             onChange={ (e) => setGame({...gameState, genre: e.target.value}) } 
@@ -48,7 +48,7 @@ const GameUpdate = () => {
             onChange={ (e) => setGame({...gameState, desc: e.target.value}) } 
             type="text" value={ gameState.desc } ></input>
             
-            <br />
+            
             <label style={styles.labelStyle}>Pris:</label>
             <input 
             onChange={ (e) => setGame({...gameState, price: parseInt(e.target.value)}) } 
@@ -61,7 +61,7 @@ const GameUpdate = () => {
             onChange={ (e) => setGame({...gameState, image: e.target.value}) } 
             type="text" value={ gameState.image } ></input>
             
-            <br />
+            
             <label style={styles.labelStyle}>Utvikler:</label>
             <input 
             onChange={ (e) => setGame({...gameState, developer: e.target.value}) } 
@@ -73,7 +73,7 @@ const GameUpdate = () => {
             onChange={ (e) => setGame({...gameState, characters: e.target.value}) } 
             type="text" value={ gameState.characters } ></input>
             
-            <br />
+            
             <label style={styles.labelStyle}>Utgivelsesdato:</label>
             <input 
             onChange={ (e) => setGame({...gameState, release: e.target.value}) } 
@@ -84,7 +84,9 @@ const GameUpdate = () => {
             <input 
             onChange={ (e) => setGame({...gameState, locations: e.target.value}) } 
             type="text" value={ gameState.locations } ></input>
-            <Button onClick={ updateGame}>Endre</Button>
+
+            <br />
+            <Button onClick={ updateGame } >Oppdater spill</Button>
 
             </Col>
 

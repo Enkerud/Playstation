@@ -36,7 +36,7 @@ const CharacterUpdate = () => {
             onChange={ (e) => setCharacter({...characterState, name: e.target.value}) } 
             type="text" value={ characterState.name } ></input>
 
-            <br />  
+             
             <label style={styles.labelStyle}>Alias</label>
             <input 
             onChange={ (e) => setCharacter({...characterState, alias: e.target.value}) } 
@@ -48,7 +48,7 @@ const CharacterUpdate = () => {
             onChange={ (e) => setCharacter({...characterState, desc: e.target.value}) } 
             type="text" value={ characterState.desc } ></input>
             
-            <br />
+            
             <label style={styles.labelStyle}>Alder</label>
             <input 
             onChange={ (e) => setCharacter({...characterState, age: parseInt(e.target.value)}) } 
@@ -60,7 +60,7 @@ const CharacterUpdate = () => {
             onChange={ (e) => setCharacter({...characterState, image: e.target.value}) } 
             type="text" value={ characterState.image } ></input>
 
-            <br />
+            
             <label style={styles.labelStyle}>Spill</label>
             <input 
             onChange={ (e) => setCharacter({...characterState, game: e.target.value}) } 
@@ -72,14 +72,14 @@ const CharacterUpdate = () => {
             onChange={ (e) => setCharacter({...characterState, weapon: e.target.value}) } 
             type="text" value={ characterState.weapon } ></input>
 
-            <br />
+            
             <label style={styles.labelStyle}>Fiende</label>
             <input 
             onChange={ (e) => setCharacter({...characterState, enemy: e.target.value}) } 
             type="text" value={ characterState.enemy } ></input>
 
-
-            <Button onClick={ updateCharacter}>Endre</Button>
+            <br />
+            <Button onClick={ updateCharacter}>Oppdater karakter</Button>
             </Col>
 
         </section>

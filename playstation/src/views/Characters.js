@@ -13,11 +13,10 @@ const Characters = () => {
                 color: 'white',
                 fontSize: '80px',
                 height: '200%'
-            }} >Alle karakterer</h3>
+            }} >Spillkarakterer</h3>
 
             <CharacterProvider>
                 <CharacterList></CharacterList>
- 
             </CharacterProvider>
             
         </section>

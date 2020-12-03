@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CreateCharacter = () => {
 
@@ -70,39 +72,41 @@ const CreateCharacter = () => {
     return (
         <section>
             <h3 style={styles.labelStyle}>Legg inn ny karakter</h3>
-            <label style={styles.labelStyle}>Navn</label>
+            <label style={styles.labelStyle}>Navn:</label>
             <input id="name" onChange={ handleChange } type="text" value={ name } />
 
-            <br />
-            <label style={styles.labelStyle}>Sjanger</label>
+           
+            <label style={styles.labelStyle}>Sjanger:</label>
             <input id="alias" onChange={ handleChange } type="text" value={ alias } />
 
             <br />
-            <label style={styles.labelStyle}>Beskrivelse</label>
+            <label style={styles.labelStyle}>Beskrivelse:</label>
             <input id="desc" onChange={ handleChange } type="text" value={ desc } />
 
-            <br />
-            <label style={styles.labelStyle}>Alder</label>
+            
+            <label style={styles.labelStyle}>Alder:</label>
             <input id="age" onChange={ handleChange } type="text" value={ age } />
 
             <br />
-            <label style={styles.labelStyle}>Bilde(url)</label>
+            <label style={styles.labelStyle}>Bilde(url):</label>
             <input id="image" onChange={ handleChange } type="text" value={ image } />
 
-            <br />
-            <label style={styles.labelStyle}>Spill</label>
+            
+            <label style={styles.labelStyle}>Spill:</label>
             <input id="game" onChange={ handleChange } type="text" value={ game } />
 
             <br />
-            <label style={styles.labelStyle}>Våpen</label>
+            <label style={styles.labelStyle}>Våpen:</label>
             <input id="weapon" onChange={ handleChange } type="text" value={ weapon } />
 
-            <br />
+            
             <label style={styles.labelStyle}>Fiende</label>
             <input id="enemy" onChange={ handleChange } type="text" value={ enemy } />
 
 
-            <input onClick={ createCharacter }  type="button" value="Legg til ny karakter"></input>
+            <br />
+            <Button variant="success" onClick={ createCharacter } >Legg til ny karakter</Button>
+
 
         </section>
     )

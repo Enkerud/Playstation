@@ -5,8 +5,6 @@ import React from 'react';
 import Banner from 'react-js-banner';
 import cardImage from '../assets/images/godofwar.jpg';
 
-//TODO: Fikse bilde i card
-
 const Games = () => {
 
     const styles = {
@@ -20,9 +18,11 @@ const Games = () => {
             backgroundColor: 'azure'
         },
         bannerStyle: {
-            margin: '40px'
+            marginTop: '90px',
         }
     };
+
+
  return (
         <section>
             <h3
@@ -54,6 +54,7 @@ const Games = () => {
             </Card>
         </Row>  
 
+
           {/* Bannere som skal lede til Playstation sine offisielle sider */}
 
             <a href="https://store.playstation.com/en-no/latest" target="_blank">
@@ -62,15 +63,11 @@ const Games = () => {
         />
         </a>
         <a href="https://blog.playstation.com/" target="_blank">
-
             <Banner
             title="Les nyheter på Playstations offisielle blogg" 
         />
         </a>
-        
-
         </section>
-        
     )
 }
 

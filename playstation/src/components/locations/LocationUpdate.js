@@ -36,7 +36,7 @@ const LocationUpdate = () => {
             onChange={ (e) => setLocation({...locationState, name: e.target.value}) } 
             type="text" value={ locationState.name } ></input>
             
-            <br />
+            
             <label style={styles.labelStyle}>Desc</label>
             <input 
             onChange={ (e) => setLocation({...locationState, desc: e.target.value}) } 
@@ -49,21 +49,21 @@ const LocationUpdate = () => {
             onChange={ (e) => setLocation({...locationState, image: e.target.value}) } 
             type="text" value={ locationState.image } ></input>
 
-            <br />
+            
             <label style={styles.labelStyle}>Spill</label>
             <input 
             onChange={ (e) => setLocation({...locationState, game: e.target.value}) } 
             type="text" value={ locationState.game } ></input>
 
 
-            <br />
+            
             <label style={styles.labelStyle}>Fiende</label>
             <input 
             onChange={ (e) => setLocation({...locationState, enemies: e.target.value}) } 
             type="text" value={ locationState.enemies } ></input>
 
-
-            <Button onClick={ updateLocation}>Endre</Button>
+            <br />
+            <Button onClick={ updateLocation}>Oppdater verden</Button>
             </Col>
 
         </section>

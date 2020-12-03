@@ -17,7 +17,6 @@ const Locations = () => {
 
             <LocationProvider>
                 <LocationList></LocationList>
- 
             </LocationProvider>
             
         </section>
