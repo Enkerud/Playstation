@@ -4,8 +4,6 @@ import cardImage from '../../assets/images/godofwar.jpg';
 import { BrowserRouter as Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const LocationItem = ( {id, name, game, image, desc } ) => {
 
     const styles = {
@@ -27,17 +25,12 @@ const LocationItem = ( {id, name, game, image, desc } ) => {
         }        
     };
 
-        
-
-
     return (
         <div>
-        <Col>
-        
-            <Card class="card bg-dark text-white" style={styles.goodStyle}>
+        <Col>     
+            <Card style={styles.goodStyle}>
             <Card.Img src={image} style={styles.imgStyle}></Card.Img>
-                <Card.Title>{ name }</Card.Title>
-                
+                <Card.Title>{ name }</Card.Title>              
                 <Card.Body style={styles.goodStyle}>
                     <Card.Text>{ game } </Card.Text>
                     <Link to={`/location/${id}`}>

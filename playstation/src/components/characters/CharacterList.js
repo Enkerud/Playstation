@@ -3,9 +3,7 @@ import { Row } from 'react-bootstrap';
 import { useContext } from 'react';
 import { CharacterContext } from '../../contexts/CharacterContext';
 
-
 const CharacterList = () => {
-
     const { characters } = useContext( CharacterContext );
     const [ charactersState, setCharacters ] = characters;
 
@@ -14,7 +12,6 @@ const CharacterList = () => {
             return <CharacterItem key={i} { ...character } />
         } );
     }
-
 
     return (
         <section>

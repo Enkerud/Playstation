@@ -4,8 +4,6 @@ import axios from 'axios';
 import { Col, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const LocationUpdate = () => {
 
     const { location } = useContext( LocationContext );
@@ -70,6 +68,5 @@ const LocationUpdate = () => {
     )
     
 }
-
 
 export default LocationUpdate;

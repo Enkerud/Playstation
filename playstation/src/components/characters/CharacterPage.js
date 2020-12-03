@@ -1,8 +1,6 @@
-import CharacterItem from './CharacterItem';
 import React, { useEffect, useState } from 'react';
 
-
-const CharacterPage = ({ match, location }) => {
+const CharacterPage = ({ match }) => {
   const { params: { id } } = match;
 
   const [character, setCharacter] = useState({ name: "Karakter" });
@@ -34,11 +32,6 @@ const CharacterPage = ({ match, location }) => {
       maxWidth: "800px"
   }};
 
-  
-
- 
-
-
   return (
     <div style={styles.textStyle}>
       <h1>{character.name}</h1>
@@ -47,12 +40,9 @@ const CharacterPage = ({ match, location }) => {
       <p>{character.game}</p>
       <p>{character.desc}</p>
       <p>{character.age} år gammel</p>
-      <p>{character.weapon}</p>
-     
+      <p>{character.weapon}</p>     
     </div>
-
   );
 }
-
 
 export default CharacterPage;

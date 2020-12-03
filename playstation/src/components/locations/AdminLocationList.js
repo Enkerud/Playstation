@@ -3,9 +3,7 @@ import { Row } from 'react-bootstrap';
 import { useContext } from 'react';
 import { LocationContext } from '../../contexts/LocationContext';
 
-
 const AdminLocationList = () => {
-
     const { locations } = useContext( LocationContext );
     const [ locationsState, setLocations ] = locations;
 
@@ -13,8 +11,7 @@ const AdminLocationList = () => {
         return locationsState.map( ( location, i ) => {
             return <AdminLocationItem key={i} { ...location } />
         } );
-    }
-    
+    }    
 
     return (
         <section>
@@ -22,8 +19,7 @@ const AdminLocationList = () => {
                 { generateLocations() }
             </Row>
         </section>
-    )
-    
+    )    
 }
 
 export default AdminLocationList;

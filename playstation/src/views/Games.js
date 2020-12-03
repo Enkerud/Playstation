@@ -1,9 +1,6 @@
 import { GameProvider } from '../contexts/GameContext';
 import GameList from '../components/games/GameList';
 
-
-
-
 const Games = () => {
     return (
         <section>
@@ -13,11 +10,9 @@ const Games = () => {
                 color: 'white',
                 fontSize: '80px'
             }} >Alle spill</h3>
-
             <GameProvider>
                 <GameList></GameList>
-            </GameProvider>
-            
+            </GameProvider>    
         </section>
     )
 }

@@ -22,7 +22,6 @@ const Games = () => {
         }
     };
 
-
  return (
         <section>
             <h3
@@ -31,7 +30,7 @@ const Games = () => {
                 color: 'white',
                 fontSize: '80px',
                 margin: '40px'
-            }} >Playstation</h3>
+            }} >PlaystationPortalen Norge</h3>
 
         <Row >
             <Card style={styles.cardStyle}>
@@ -54,9 +53,7 @@ const Games = () => {
             </Card>
         </Row>  
 
-
           {/* Bannere som skal lede til Playstation sine offisielle sider */}
-
             <a href="https://store.playstation.com/en-no/latest" target="_blank">
         <Banner style={styles.bannerStyle}
             title="Kjøp spill hos Playstation Store" 

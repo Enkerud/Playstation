@@ -18,15 +18,17 @@ import pslogo from '../../assets/images/pslogo.png'
 
 const Routes = () => {
 
-  // STYLING
-
+  //I denne komponenten styrer jeg routingen for hele appen. 
+  
+  // Styling
   const styles = {
     navStyle: {
         textAlign: 'center',
         backgroundColor: 'darkSlateGray',
         opacity: '90%',
         fontSize: '45px',
-        height: '80px'
+        height: '80px',
+        
     },
     linkStyle: {
       color: 'white'
@@ -42,20 +44,19 @@ const Routes = () => {
       margin: '5px'
     }};
 
-
   return (
     <div className="appMain">
-    <Router >
+    <Router>
+      {/* Bruker Headroom som gir en pen scrolleeffekt på header. Rekker dessverre ikke å gjøre denne så mobilvennlig som jeg ønsket */}
       <Headroom>
         <Navbar style={styles.navStyle}>
-          <Nav >
+          <Nav>
             <img src={pslogo} style={styles.logoStyle} ></img>
             <Nav.Link as={Link} to="/" style={styles.linkStyle}>Hjem |</Nav.Link>
             <Nav.Link as={Link} to="/games" style={styles.linkStyle}>Spill |</Nav.Link>
             <Nav.Link as={Link} to="/characters" style={styles.linkStyle}>Karakterer |</Nav.Link>
             <Nav.Link as={Link} to="/locations" style={styles.linkStyle}>Verdener</Nav.Link>
             <Nav.Link as={Link} to="/admin" style={styles.linkAdminStyle}>Admin</Nav.Link>
-
           </Nav>  
         </Navbar>
         </Headroom>
@@ -63,14 +64,16 @@ const Routes = () => {
         <Container>
           <main>
             <Switch>
-              <Route exact path="/" component={Home}></Route>  
-              <Route path="/games" component={Games}></Route>
-              <Route path="/characters" component={Characters}></Route>
-              <Route path="/locations" component={Locations}></Route>
-              <Route path="/admin" component={Admin}></Route>
-              <Route path="/game/:id" component={GamePage}></Route>
+              <Route exact path="/"        component={Home}></Route>  
+              <Route path="/games"         component={Games}></Route>
+              <Route path="/characters"    component={Characters}></Route>
+              <Route path="/locations"     component={Locations}></Route>
+              <Route path="/admin"         component={Admin}></Route>
+
+              {/* Her bruker param id for å finne riktig objekt i databasen. Mer om det i GamePage*/}
+              <Route path="/game/:id"      component={GamePage}></Route>
               <Route path="/character/:id" component={CharacterPage}></Route>
-              <Route path="/location/:id" component={LocationPage}></Route>
+              <Route path="/location/:id"  component={LocationPage}></Route>
               
             </Switch>
           </main>

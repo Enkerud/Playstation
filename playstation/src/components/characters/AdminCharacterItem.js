@@ -3,11 +3,7 @@ import {CharacterContext } from '../../contexts/CharacterContext';
 import { useContext } from 'react';
 import CharacterDelete from './CharacterDelete';
 
-
-
-
 const AdminCharacterItem = ( {id, name, image, alias, desc, age, game, weapon, enemy} ) => {
-
     const { character, characters, i } = useContext( CharacterContext );
     const [ characterState, setCharacter ] = character;
 
@@ -23,11 +19,8 @@ const AdminCharacterItem = ( {id, name, image, alias, desc, age, game, weapon, e
             weapon: weapon,
             enemy: enemy
 
-        });
-
-        
+        });        
     }
-
 
     return (
         <Col>
@@ -51,6 +44,5 @@ const AdminCharacterItem = ( {id, name, image, alias, desc, age, game, weapon, e
         </Col>
     )
 }
-
 
 export default AdminCharacterItem;

@@ -2,20 +2,19 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AdminUploadImage from './AdminUploadImage';
+
+// import AdminUploadImage from './AdminUploadImage'; Viser til noe av hvordan jeg ville lastet opp bilde. Mer info i komponenten.
 
 const CreateGame = () => {
-
-    const [name, setName ] = useState("");
-    const [genre, setGenre ] = useState("");
-    const [ desc, setDesc ] = useState("");
-    const [ price, setPrice ] = useState("0");
-    const [ image, setImage ] = useState("");
-    const [ developer, setDeveloper ] = useState("");
-    const [ characters, setCharacters ] = useState("");
-    const [ release, setRelease ] = useState("");
-    const [ locations, setLocations ] = useState("");
-
+    const [ name, setName ] = useState("s");
+    const [ genre, setGenre ] = useState("s");
+    const [ desc, setDesc ] = useState("s");
+    const [ price, setPrice ] = useState(0);
+    const [ image, setImage ] = useState("s");
+    const [ developer, setDeveloper ] = useState("s");
+    const [ characters, setCharacters ] = useState("s");
+    const [ release, setRelease ] = useState("s");
+    const [ locations, setLocations ] = useState("s");
 
     const handleChange = ( e ) => {
         switch( e.target.id ){
@@ -63,10 +62,10 @@ const CreateGame = () => {
             release: release,
             locations: locations
         };
-
         axios.post(url, newGame)
     }
 
+    //Styling
     const styles = {
         labelStyle: {
             color: 'white',
@@ -74,49 +73,46 @@ const CreateGame = () => {
         }
     }
 
-    return (
+      return (
         <section>
-            <h3 style={styles.labelStyle}>Legg inn nytt spill</h3>
-            <label style={styles.labelStyle}>Navn</label>
-            <input id="name" onChange={ handleChange } type="text" value={ name } />
+        <h3 style={styles.labelStyle}>Legg inn nytt spill</h3>
 
-            
-            <label style={styles.labelStyle}>Sjanger</label>
-            <input id="genre" onChange={ handleChange } type="text" value={ genre } />
+        <label style={styles.labelStyle}>Navn</label>
+        <input id="name" onChange={ handleChange } type="text" value={ name } />
+        
+        <label style={styles.labelStyle}>Sjanger</label>
+        <input id="genre" onChange={ handleChange } type="text" value={ genre } />
 
-            <br />
-            <label style={styles.labelStyle}>Beskrivelse</label>
-            <input id="desc" onChange={ handleChange } type="text" value={ desc } />
+        <br />
+        <label style={styles.labelStyle}>Beskrivelse</label>
+        <input id="desc" onChange={ handleChange } type="text" value={ desc } />
 
-            
-            <label style={styles.labelStyle}>Pris</label>
-            <input id="price" onChange={ handleChange } type="text" value={ price } />
+        <label style={styles.labelStyle}>Pris</label>
+        <input id="price" onChange={ handleChange } type="number" value={ price } />
 
-            <br />
-            <label style={styles.labelStyle}>Bilde</label>
-            <input id="image" onChange={ handleChange } type="text" value={ image } />
+        <br />
+        <label style={styles.labelStyle}>Bilde</label>
+        <input id="image" onChange={ handleChange } type="text" value={ image } />
 
-            
-            <label style={styles.labelStyle}>Utvikler</label>
-            <input id="developer" onChange={ handleChange } type="text" value={ developer } />
+        <label style={styles.labelStyle}>Utvikler</label>
+        <input id="developer" onChange={ handleChange } type="text" value={ developer } />
 
-            <br />
-            <label style={styles.labelStyle}>Karakterer</label>
-            <input id="characters" onChange={ handleChange } type="text" value={ characters } />
+        <br />
+        <label style={styles.labelStyle}>Karakterer</label>
+        <input id="characters" onChange={ handleChange } type="text" value={ characters } />
+    
+        <label style={styles.labelStyle}>Release</label>
+        <input id="release" onChange={ handleChange } type="text" value={ release } />
 
-            
-            <label style={styles.labelStyle}>Release</label>
-            <input id="release" onChange={ handleChange } type="text" value={ release } />
+        <br />
+        <label style={styles.labelStyle}>Verdener</label>
+        <input id="locations" onChange={ handleChange } type="text" value={ locations } />
 
-            <br />
-            <label style={styles.labelStyle}>Verdener</label>
-            <input id="locations" onChange={ handleChange } type="text" value={ locations } />
-
-            <AdminUploadImage></AdminUploadImage> 
-            <br />
-            <Button variant="success" onClick={ createGame } >Legg til nytt spill</Button>
-        </section>
-    )
+        {/* <AdminUploadImage></AdminUploadImage>  */}
+        <br />
+        <Button variant="success" onClick={ createGame } >Legg til nytt spill</Button>
+    </section>
+      )
 }
 
 export default CreateGame;

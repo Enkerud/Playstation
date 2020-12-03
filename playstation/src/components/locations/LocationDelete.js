@@ -3,11 +3,10 @@ import { useContext } from 'react';
 import {Button} from 'react-bootstrap';
 import {LocationContext } from '../../contexts/LocationContext';
 
-
 const LocationDelete = (props) => {
 
     const { location } = useContext( LocationContext );
-    const [ locationState, setLocation ] = location;
+    const [ setLocation ] = location;
 
     const deleteLocation = () => {
         const url ="https://localhost:5001/Locations";
@@ -16,7 +15,6 @@ const LocationDelete = (props) => {
                 console.log(response);
             });   
     }
-
 
     return (
         <Button variant="danger"

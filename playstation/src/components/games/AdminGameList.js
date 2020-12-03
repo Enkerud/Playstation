@@ -3,9 +3,7 @@ import { Row } from 'react-bootstrap';
 import { useContext } from 'react';
 import { GameContext } from '../../contexts/GameContext';
 
-
 const AdminGameList = () => {
-
     const { games } = useContext( GameContext );
     const [ gamesState, setGames ] = games;
 
@@ -15,7 +13,7 @@ const AdminGameList = () => {
         } );
     }
 
-
+    //Her genererer jeg spillene i en liste som skal inneholde flere GameItems.
     return (
         <section>
             <Row   xs={ 1 } sm={ 2 } md={ 3 } lg={ 3 } xl={ 4 } >

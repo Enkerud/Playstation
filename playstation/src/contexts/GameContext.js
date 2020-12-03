@@ -2,7 +2,6 @@ import { useEffect, useState, createContext } from 'react';
 import axios from 'axios';
 
 export const GameContext = createContext();
-
 export const GameProvider = ( props ) => {
 
     const [ game, setGame ] = useState( { 
@@ -30,9 +29,6 @@ export const GameProvider = ( props ) => {
             { props.children }
         </GameContext.Provider>
     )
-
 }
 
 export default GameProvider;
-
-

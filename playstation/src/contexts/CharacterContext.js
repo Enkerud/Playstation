@@ -1,9 +1,7 @@
 import { useEffect, useState, createContext } from 'react';
 import axios from 'axios';
 
-
 export const CharacterContext = createContext();
-
 export const CharacterProvider = ( props ) => {
 
     const [ character, setCharacter ] = useState( { id:"dummyId", name: "DummyCharacter", game: "DummyType" } );
@@ -28,9 +26,6 @@ export const CharacterProvider = ( props ) => {
             { props.children }
         </CharacterContext.Provider>
     )
-
 }
 
 export default CharacterProvider;
-
-

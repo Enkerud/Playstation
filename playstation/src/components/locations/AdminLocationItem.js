@@ -3,9 +3,6 @@ import {LocationContext } from '../../contexts/LocationContext';
 import { useContext } from 'react';
 import LocationDelete from './LocationDelete';
 
-
-
-
 const AdminLocationItem = ( {id, name, image, desc, game, enemies} ) => {
 
     const { location, locations, i } = useContext( LocationContext );
@@ -19,12 +16,8 @@ const AdminLocationItem = ( {id, name, image, desc, game, enemies} ) => {
             desc: desc,  
             game: game,
             enemies: enemies
-
-        });
-
-        
+        });        
     }
-
 
     return (
         <Col>
@@ -39,12 +32,12 @@ const AdminLocationItem = ( {id, name, image, desc, game, enemies} ) => {
                 </Card.Body>
                 <Button onClick={ setSelectedLocation } >Oppdater spill</Button>
                 <LocationDelete 
-                key={ i }
-                id={ id }></LocationDelete>
+                    key={ i }
+                    id={ id }>
+                </LocationDelete>
             </Card>
         </Col>
     )
 }
-
 
 export default AdminLocationItem;

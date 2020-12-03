@@ -3,9 +3,7 @@ import { Row } from 'react-bootstrap';
 import { useContext } from 'react';
 import { CharacterContext } from '../../contexts/CharacterContext';
 
-
 const AdminCharacterList = () => {
-
     const { characters } = useContext( CharacterContext );
     const [ charactersState, setCharacters ] = characters;
 
@@ -13,8 +11,7 @@ const AdminCharacterList = () => {
         return charactersState.map( ( character, i ) => {
             return <AdminCharacterItem key={i} { ...character } />
         } );
-    }
-    
+    }  
 
     return (
         <section>
@@ -22,8 +19,7 @@ const AdminCharacterList = () => {
                 { generateCharacters() }
             </Row>
         </section>
-    )
-    
+    )    
 }
 
 export default AdminCharacterList;

@@ -1,11 +1,9 @@
-import LocationItem from './LocationItem';
 import React, { useEffect, useState } from 'react';
 
-
-const LocationPage = ({ match, location }) => {
+const LocationPage = ({ match }) => {
   const { params: { id } } = match;
 
-  const [locations, setLocation] = useState({ name: "Karakter" });
+  const [location, setLocation] = useState({ name: "Karakter" });
   const [isFetched, setIsFetched] = useState(false);
   useEffect(() => {
     if (! isFetched) {
@@ -20,7 +18,7 @@ const LocationPage = ({ match, location }) => {
           console.log(error);
         });
     }
-  }, [locations, isFetched]);
+  }, [location, isFetched]);
 
   const styles = {
     textStyle: {
@@ -34,23 +32,16 @@ const LocationPage = ({ match, location }) => {
       maxWidth: "800px"
   }};
 
-  
-
- 
-
-
   return (
     <div style={styles.textStyle}>
-      <h1>{locations.name}</h1>
-      <img src={locations.image} style={styles.imgStyle}></img>
-      <p>{locations.game}</p>
-      <p>{locations.desc}</p>
-      <p>{locations.enemies}</p>
+      <h1>{location.name}</h1>
+      <img src={location.image} style={styles.imgStyle}></img>
+      <p>{location.game}</p>
+      <p>{location.desc}</p>
+      <p>{location.enemies}</p>
      
     </div>
-
   );
 }
-
 
 export default LocationPage;

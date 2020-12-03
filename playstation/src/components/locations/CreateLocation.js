@@ -11,8 +11,6 @@ const CreateLocation = () => {
     const [ game, setGame ] = useState("");
     const [ enemies, setEnemies ] = useState("");
 
-
-
     const handleChange = ( e ) => {
         switch( e.target.id ){
             case "name":
@@ -58,31 +56,23 @@ const CreateLocation = () => {
         <section>
             <h3 style={styles.labelStyle}>Legg til ny verden</h3>
             <label style={styles.labelStyle}>Navn</label>
-            <input id="name" onChange={ handleChange } type="text" value={ name } />
-
-
-            
+            <input id="locName" onChange={ handleChange } type="text" value={ name } />
+           
             <label style={styles.labelStyle}>Beskrivelse</label>
-            <input id="desc" onChange={ handleChange } type="text" value={ desc } />
-
-
+            <input id="locDesc" onChange={ handleChange } type="text" value={ desc } />
 
             <br />
             <label style={styles.labelStyle}>Bilde(url)</label>
-            <input id="image" onChange={ handleChange } type="text" value={ image } />
-
-            
+            <input id="locImage" onChange={ handleChange } type="text" value={ image } />
+           
             <label style={styles.labelStyle}>Spill</label>
-            <input id="game" onChange={ handleChange } type="text" value={ game } />
-
-
-            
+            <input id="locGame" onChange={ handleChange } type="text" value={ game } />
+           
             <label style={styles.labelStyle}>Fiende</label>
             <input id="enemies" onChange={ handleChange } type="text" value={ enemies } />
 
             <br />
             <Button variant="success" onClick={ createLocation } >Legg til ny verden</Button>
-
         </section>
     )
 }

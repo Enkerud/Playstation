@@ -4,10 +4,7 @@ import axios from 'axios';
 import { Col, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const CharacterUpdate = () => {
-
     const { character } = useContext( CharacterContext );
     const [ characterState, setCharacter ] = character;
 
@@ -83,9 +80,7 @@ const CharacterUpdate = () => {
             </Col>
 
         </section>
-    )
-    
+    )   
 }
-
 
 export default CharacterUpdate;

@@ -1,9 +1,6 @@
 import { LocationProvider } from '../contexts/LocationContext';
 import LocationList from '../components/locations/LocationList';
 
-
-
-
 const Locations = () => {
     return (
         <section>
@@ -17,8 +14,7 @@ const Locations = () => {
 
             <LocationProvider>
                 <LocationList></LocationList>
-            </LocationProvider>
-            
+            </LocationProvider>          
         </section>
     )
 }

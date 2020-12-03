@@ -1,13 +1,10 @@
-import {GameContext } from '../contexts/GameContext';
+import {GameContext } from '../../contexts/GameContext';
 import { useContext } from 'react';
 import axios from 'axios';
 import { Col, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const GameUpdate = () => {
-
     const { game } = useContext( GameContext );
     const [ gameState, setGame ] = game;
 
@@ -16,6 +13,7 @@ const GameUpdate = () => {
         axios.put(`${url}/${gameState.id}`, gameState);
     }
 
+    //Styling
     const styles = {
         labelStyle: {
           color: 'white',
@@ -87,13 +85,9 @@ const GameUpdate = () => {
 
             <br />
             <Button onClick={ updateGame } >Oppdater spill</Button>
-
             </Col>
-
         </section>
-    )
-    
+    ) 
 }
-
 
 export default GameUpdate;

@@ -1,9 +1,7 @@
 import { useEffect, useState, createContext } from 'react';
 import axios from 'axios';
 
-
 export const LocationContext = createContext();
-
 export const LocationProvider = ( props ) => {
 
     const [ location, setLocation ] = useState( { id:"dummyId", name: "Dummylocation", game: "DummyType" } );
@@ -27,9 +25,6 @@ export const LocationProvider = ( props ) => {
             { props.children }
         </LocationContext.Provider>
     )
-
 }
 
 export default LocationProvider;
-
-

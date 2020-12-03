@@ -1,15 +1,12 @@
-import { Col, Card, Button, Jumbotron } from 'react-bootstrap';
+import { Col, Card, Button } from 'react-bootstrap';
 import {GameContext } from '../../contexts/GameContext';
 import { useContext } from 'react';
 import GameDelete from './GameDelete';
 
-
-
-
 const AdminGameItem = ( {id, name, image, genre, desc, price, developer, characters, release, locations} ) => {
 
-    const { game, games, i } = useContext( GameContext );
-    const [ gameState, setGame ] = game;
+    const { game, i } = useContext( GameContext );
+    const [ setGame ] = game;
 
     const setSelectedGame = () => {
         setGame({
@@ -24,21 +21,23 @@ const AdminGameItem = ( {id, name, image, genre, desc, price, developer, charact
             release: release, 
             locations: locations
         });
-
-        
     }
 
- 
-    
+    // Styling
     const styles = {
         imgStyle: {
             height: '120px'
+        },
+        cardStyle: {
+            height: '700px',
+            margin: '20px'
         }
     }
 
+    //Her lager jeg et card som skal fungere for adminsiden, med oppdaterings- og deleteknapp.
     return (
         <Col>
-            <Card>
+            <Card style={styles.cardStyle}>
                 <Card.Title>{ name }</Card.Title>
                 <Card.Body>
                     <Card.Img src={image} style={styles.imgStyle}></Card.Img>
@@ -58,6 +57,5 @@ const AdminGameItem = ( {id, name, image, genre, desc, price, developer, charact
         </Col>
     )
 }
-
 
 export default AdminGameItem;

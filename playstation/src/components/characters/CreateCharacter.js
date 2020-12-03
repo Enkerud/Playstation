@@ -4,17 +4,14 @@ import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CreateCharacter = () => {
-
     const [name, setName ] = useState("");
     const [alias, setAlias ] = useState("");
     const [ desc, setDesc ] = useState("");
-    const [ age, setAge ] = useState("0");
+    const [ age, setAge ] = useState(0);
     const [ image, setImage ] = useState("");
     const [ game, setGame ] = useState("");
     const [ weapon, setWeapon ] = useState("");
     const [ enemy, setEnemy ] = useState("");
-
-
 
     const handleChange = ( e ) => {
         switch( e.target.id ){
@@ -72,6 +69,7 @@ const CreateCharacter = () => {
     return (
         <section>
             <h3 style={styles.labelStyle}>Legg inn ny karakter</h3>
+            
             <label style={styles.labelStyle}>Navn:</label>
             <input id="name" onChange={ handleChange } type="text" value={ name } />
 
@@ -85,7 +83,7 @@ const CreateCharacter = () => {
 
             
             <label style={styles.labelStyle}>Alder:</label>
-            <input id="age" onChange={ handleChange } type="text" value={ age } />
+            <input id="age" onChange={ handleChange } type="number" value={ age } />
 
             <br />
             <label style={styles.labelStyle}>Bilde(url):</label>

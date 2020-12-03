@@ -3,9 +3,7 @@ import { Row } from 'react-bootstrap';
 import { useContext } from 'react';
 import { LocationContext } from '../../contexts/LocationContext';
 
-
 const LocationList = () => {
-
     const { locations } = useContext( LocationContext );
     const [ locationsState, setLocations ] = locations;
 
@@ -14,7 +12,6 @@ const LocationList = () => {
             return <LocationItem key={i} { ...location } />
         } );
     }
-
 
     return (
         <section>

@@ -1,9 +1,6 @@
 import { CharacterProvider } from '../contexts/CharacterContext';
 import CharacterList from '../components/characters/CharacterList';
 
-
-
-
 const Characters = () => {
     return (
         <section>
@@ -17,8 +14,7 @@ const Characters = () => {
 
             <CharacterProvider>
                 <CharacterList></CharacterList>
-            </CharacterProvider>
-            
+            </CharacterProvider>           
         </section>
     )
 }

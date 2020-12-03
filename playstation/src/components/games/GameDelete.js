@@ -3,11 +3,10 @@ import { useContext } from 'react';
 import {Button} from 'react-bootstrap';
 import {GameContext } from '../../contexts/GameContext';
 
-
 const GameDelete = (props) => {
-
+    // Her brukes props for å bruke riktig id i axios-kallet for sletting.
     const { game } = useContext( GameContext );
-    const [ gameState, setGame ] = game;
+    const [ setGame ] = game;
 
     const deleteGame = () => {
         const url ="https://localhost:5001/games";
@@ -16,7 +15,6 @@ const GameDelete = (props) => {
                 console.log(response);
             });   
     }
-
 
     return (
         <Button variant="danger"
