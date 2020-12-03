@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Col, Row, Card, Button } from 'react-bootstrap';
 import React from 'react';
 import Banner from 'react-js-banner';
+import cardImage from '../assets/images/godofwar.jpg';
 
 //TODO: Fikse bilde i card
 
@@ -10,8 +11,13 @@ const Games = () => {
 
     const styles = {
         cardStyle: {
-            margin: '20px',
-            textAlign: 'center',
+            fontSize: '60px',
+            width: '15em',
+            height: '',
+            margin: '15px',
+            color: 'black',
+            bot: '0%',
+            backgroundColor: 'azure'
         }
     };
  return (
@@ -24,28 +30,31 @@ const Games = () => {
                 margin: '40px'
             }} >Playstation</h3>
 
-        <Row>
+        <Row style={{
+                margin: 'auto',
+            }}>
             <Card style={styles.cardStyle}>
-                <Card.Img src={require("../assets/images/katt.jpg")}></Card.Img>
-                <Card.Title>Oppdag nye spill</Card.Title>
-                <Card.Body>
-                    <Card.Text>Se hvilke spill som kan passe for deg! </Card.Text>
-                </Card.Body>
+            <Card.Img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20200704183430/horizon-zero-dawn-impact-poster-ps4-us-07feb17.jpg" alt="Card image" variant="bottom"/>
+                        <Card.Text>Oppdag nye spill</Card.Text>
             </Card>
+
+
             <Card style={styles.cardStyle}>
-                <Card.Title>Se på dine favorittkarakterer</Card.Title>
-                <Card.Img src={require("../assets/images/katt.jpg")}></Card.Img>
+                <Card.Img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20201015170515/jKyZh7AmtzFheyg3GWUn3k.jpg"></Card.Img>
                 <Card.Body>
                     <Card.Text>Lær mer om karakterene du liker best!</Card.Text>
                 </Card.Body>
             </Card>
+
             <Card style={styles.cardStyle}>
-                <Card.Title>Utforsk verdener!</Card.Title>
-                <Card.Body>
-                <Card.Img src={require("../assets/images/katt.jpg")}></Card.Img>
-                    <Card.Text>Drøm deg bort i utrolige spillverdener</Card.Text>
+                
+                <Card.Img src="https://images6.alphacoders.com/983/983639.png"></Card.Img>
+                    <Card.Body>
+                    <Card.Text>Drøm deg bort i utrolige spillverdener!</Card.Text>
                 </Card.Body>
             </Card>
+
+
         </Row>    
 
             <a href="https://store.playstation.com/en-no/latest" target="_blank">

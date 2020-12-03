@@ -22,13 +22,14 @@ const AdminUploadImage = () => {
   });
 
   return (
-    <div >
-      <h3>Last opp bilde</h3>
-      <label>Bilde</label>
-      <input onChange={ handleChange } type="file" ></input>
-      <input onClick={ uploadImage } type="button" value="Last opp bilde" ></input>
-    </div>
-  );
+    // <div >
+    //   <h3>Last opp bilde</h3>
+    //   <label>Bilde</label>
+    //   <input onChange={ handleChange } type="file" ></input>
+    //   <input onClick={ uploadImage } type="button" value="Last opp bilde" ></input>
+    // </div>
+    //
+    <></>);
 }
 
-export default AdminUploadImage
+export default AdminUploadImage;

@@ -53,6 +53,13 @@ const GameUpdate = () => {
             <input 
             onChange={ (e) => setGame({...gameState, price: parseInt(e.target.value)}) } 
             type="number" value={ gameState.price } ></input>
+
+            {/* Må her bruke bildeadresse/url pga endringer i webpack-config vi ikke har gått gjennom */}
+
+            <label style={styles.labelStyle}>Bilde(url)</label>
+            <input 
+            onChange={ (e) => setGame({...gameState, image: e.target.value}) } 
+            type="text" value={ gameState.image } ></input>
             
 
             <label style={styles.labelStyle}>Utvikler</label>

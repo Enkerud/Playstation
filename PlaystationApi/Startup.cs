@@ -38,6 +38,7 @@ namespace PlaystationApi
             );
 
             services.AddSingleton<GamesService>();
+            services.AddSingleton<CharactersService>();
 
             services.AddCors( options => {
                 options.AddPolicy("AllowAll", builder => 

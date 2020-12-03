@@ -7,12 +7,12 @@ export const CharacterContext = createContext();
 
 export const CharacterProvider = ( props ) => {
 
-    const [ character, setCharacter ] = useState( { id:"dummyId", name: "DummyCharacter", type: "DummyType" } );
+    const [ character, setCharacter ] = useState( { id:"dummyId", name: "DummyCharacter", game: "DummyType" } );
     
     const [ characters, setCharacters ] = useState([
-        { id: "1616", name: "Astros Playroom", price: 0, image: "astro.jpg", 
-        desc: "Prøv Playstation sine nye features med dette gratisspillet!", developer: "Sony Entertainment", 
-        characters: "Astro", release: "19.11.2020", genre: "Family", location: "The Playroom", image: "katt.jpg" }
+        { id: "1616", name: "Astro", age: 0, image: "astro.jpg", 
+        desc: "Prøv Playstation sine nye features med dette gratisspillet!", game: "Sony Entertainment", 
+        alias: "Astro", weapon: "19.11.2020"}
     ]); 
 
     useEffect( () => {

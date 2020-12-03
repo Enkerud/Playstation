@@ -7,7 +7,6 @@ import Games from './views/Games';
 import Characters from './views/Characters';
 import Home from './views/Home';
 import Admin from './views/Admin';
-import FullGame from './views/FullGame';
 import GamePage from './components/games/GamePage';
 import Routes from './components/routes/Routes';
 

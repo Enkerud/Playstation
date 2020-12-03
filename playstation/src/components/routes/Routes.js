@@ -7,22 +7,44 @@ import Games from '../../views/Games';
 import Characters from '../../views/Characters';
 import Home from '../../views/Home';
 import Admin from '../../views/Admin';
-import FullGame from '../../views/FullGame';
 import GamePage from '../../components/games/GamePage';
+import CharacterPage from '../../components/characters/CharacterPage';
+import Headroom from 'react-headroom';
 
 const Routes = () => {
+
+  const styles = {
+    navStyle: {
+        textAlign: 'center',
+        backgroundColor: 'darkSlateGray',
+        opacity: '90%',
+        fontSize: '45px',
+        height: '80px'
+    },
+    linkStyle: {
+      color: 'white'
+    },
+    linkAdminStyle: {
+      color: 'white',
+      position: 'absolute',
+      right: "10px"
+    }};
+
+
   return (
     <div className="appMain">
     <Router >
-        <Navbar>
-          <Nav style={{margin: 'auto', color: 'red', fontSize: '35px'}} >
-            <Nav.Link as={Link} to="/">Hjem</Nav.Link>
-            <Nav.Link as={Link} to="/games">Spill</Nav.Link>
-            <Nav.Link as={Link} to="/characters">Karakterer</Nav.Link>
-            <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
+      <Headroom>
+        <Navbar style={styles.navStyle}>
+          <Nav >
+            <Nav.Link as={Link} to="/" style={styles.linkStyle}>Hjem</Nav.Link>
+            <Nav.Link as={Link} to="/games" style={styles.linkStyle}>Spill</Nav.Link>
+            <Nav.Link as={Link} to="/characters" style={styles.linkStyle}>Karakterer</Nav.Link>
+            <Nav.Link as={Link} to="/admin" style={styles.linkAdminStyle}>Admin</Nav.Link>
 
           </Nav>  
         </Navbar>
+        </Headroom>
 
         <Container>
           <main>
@@ -31,8 +53,8 @@ const Routes = () => {
               <Route path="/games" component={Games}></Route>
               <Route path="/characters" component={Characters}></Route>
               <Route path="/admin" component={Admin}></Route>
-              <Route path="/full-game" component={FullGame}></Route>
               <Route path="/game/:id" component={GamePage}></Route>
+              <Route path="/character/:id" component={CharacterPage}></Route>
               
             </Switch>
           </main>

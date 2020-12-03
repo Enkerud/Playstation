@@ -18,7 +18,7 @@ const GameList = () => {
 
     return (
         <section>
-            <Row>
+            <Row  xs={ 1 } sm={ 1 } md={ 1 } lg={ 2 } xl={ 3 } >
                 { generateGames() }
             </Row>
         </section>
