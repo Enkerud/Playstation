@@ -10,6 +10,9 @@ namespace PlaystationApi.Models{
         public string Id { get; set; }
         public string Name { get; set; }
         public string Game { get; set; }
+        public string Desc { get; set; }
+        public string Image { get; set; }
+        public string Enemies { get; set; }
      
 
     }

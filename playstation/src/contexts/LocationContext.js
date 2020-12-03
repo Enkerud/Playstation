@@ -30,6 +30,6 @@ export const LocationProvider = ( props ) => {
 
 }
 
-export default locationProvider;
+export default LocationProvider;
 
 

@@ -12,6 +12,11 @@ import AdminCharacterList from '../components/characters/AdminCharacterList';
 import CharacterUpdate from '../components/characters/CharacterUpdate';
 import CreateCharacter from '../components/characters/CreateCharacter';
 
+import LocationProvider from '../contexts/LocationContext';
+import AdminLocationList from '../components/locations/AdminLocationList';
+import LocationUpdate from '../components/locations/LocationUpdate';
+import CreateLocation from '../components/locations/CreateLocation';
+
 
 
 const Admin = () => {
@@ -52,6 +57,15 @@ const Admin = () => {
                 <CharacterUpdate></CharacterUpdate>
                 <CreateCharacter style={styles.labelStyle}></CreateCharacter>
             </CharacterProvider>
+
+            <h3 style={styles.labelStyle}>Karakterer</h3>
+
+            <LocationProvider>
+                <AdminLocationList></AdminLocationList>
+                <Button variant="success">+ Legg til karakter</Button>
+                <LocationUpdate></LocationUpdate>
+                <CreateLocation style={styles.labelStyle}></CreateLocation>
+            </LocationProvider>
         </div>
     )
     

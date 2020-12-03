@@ -12,6 +12,7 @@ import Home from '../../views/Home';
 import Admin from '../../views/Admin';
 import GamePage from '../../components/games/GamePage';
 import CharacterPage from '../../components/characters/CharacterPage';
+import LocationPage from '../../components/locations/LocationPage';
 
 import pslogo from '../../assets/images/pslogo.png'
 
@@ -49,9 +50,9 @@ const Routes = () => {
         <Navbar style={styles.navStyle}>
           <Nav >
             <img src={pslogo} style={styles.logoStyle} ></img>
-            <Nav.Link as={Link} to="/" style={styles.linkStyle}>Hjem</Nav.Link>
-            <Nav.Link as={Link} to="/games" style={styles.linkStyle}>Spill</Nav.Link>
-            <Nav.Link as={Link} to="/characters" style={styles.linkStyle}>Karakterer</Nav.Link>
+            <Nav.Link as={Link} to="/" style={styles.linkStyle}>Hjem |</Nav.Link>
+            <Nav.Link as={Link} to="/games" style={styles.linkStyle}>Spill |</Nav.Link>
+            <Nav.Link as={Link} to="/characters" style={styles.linkStyle}>Karakterer |</Nav.Link>
             <Nav.Link as={Link} to="/locations" style={styles.linkStyle}>Verdener</Nav.Link>
             <Nav.Link as={Link} to="/admin" style={styles.linkAdminStyle}>Admin</Nav.Link>
 
@@ -69,6 +70,7 @@ const Routes = () => {
               <Route path="/admin" component={Admin}></Route>
               <Route path="/game/:id" component={GamePage}></Route>
               <Route path="/character/:id" component={CharacterPage}></Route>
+              <Route path="/location/:id" component={LocationPage}></Route>
               
             </Switch>
           </main>
